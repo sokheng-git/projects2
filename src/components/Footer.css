@@ -1,0 +1,32 @@
+.ts-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px 32px;
+}
+.ts-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 768px) {
+  .ts-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+.ts-footer-brand {
+  font-family: var(--mono); font-size: 1.1rem;
+  color: var(--accent); font-weight: 700; margin-bottom: 8px;
+}
+.ts-footer-tagline { font-size: .78rem; color: var(--muted); line-height: 1.6; }
+.ts-footer-h {
+  font-family: var(--mono); font-size: .62rem; color: var(--muted);
+  letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px;
+}
+.ts-footer-link {
+  display: block; color: var(--muted); font-size: .83rem;
+  margin-bottom: 8px; text-decoration: none; cursor: pointer; transition: color .2s;
+}
+.ts-footer-link:hover { color: var(--text); }
+.ts-footer-bottom {
+  margin-top: 32px; padding-top: 18px;
+  border-top: 1px solid var(--border);
+  text-align: center; font-size: .73rem; color: var(--muted);
+}
