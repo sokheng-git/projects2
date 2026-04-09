@@ -132,7 +132,7 @@ export default function ProductsPage({ onAdd, onView, initialCat }) {
 
         <div className="ts-main">
           {/* desktop sidebar */}
-          <aside className="ts-sidebar">
+          {/* <aside className="ts-sidebar">
             <div className="ts-sidebar-label">Categories</div>
             {ALL_CATEGORIES.map(cat => (
               <label key={cat} className={`ts-check-label${selectedCats.includes(cat)?" checked":""}`}>

@@ -51,7 +51,11 @@ const styles = `
   .ts-detail-add:hover { opacity:.85;transform:translateY(-1px); }
 `;
 
-const META = [["Brand","TechShop"],["Availability","In Stock"],["Shipping","Free on $50+"]];
+const META = [
+  ["Brand", "TechShop"],
+  ["Availability", "In Stock"],
+  ["Shipping", "Free on $50+"],
+];
 
 export default function DetailPage({ product, onAdd, onBack }) {
   return (
@@ -59,22 +63,40 @@ export default function DetailPage({ product, onAdd, onBack }) {
       <style>{styles}</style>
       <div className="ts-detail">
         <div className="ts-container">
-          <button className="ts-back-btn" onClick={onBack}>← Back to Products</button>
+          <button className="ts-back-btn" onClick={onBack}>
+            ← Back to Products
+          </button>
           <div className="ts-detail-grid">
-            <div className="ts-detail-img">{product.emoji}</div>
+            <div className="ts-detail-img">
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                }}
+              />
+            </div>
             <div>
               <span className="ts-detail-cat">{product.category}</span>
               <h1 className="ts-detail-name">{product.name}</h1>
               <div className="ts-detail-price">${product.price.toFixed(2)}</div>
-              {product.orig && <div className="ts-detail-orig">Was ${product.orig}</div>}
+              {product.orig && (
+                <div className="ts-detail-orig">Was ${product.orig}</div>
+              )}
               <div className="ts-meta">
-                {[...META,["Category",product.category]].map(([k,v]) => (
+                {[...META, ["Category", product.category]].map(([k, v]) => (
                   <div className="ts-meta-row" key={k}>
-                    <span className="ts-meta-key">{k}</span><span>{v}</span>
+                    <span className="ts-meta-key">{k}</span>
+                    <span>{v}</span>
                   </div>
                 ))}
               </div>
-              <button className="ts-detail-add" onClick={() => onAdd(product)}>ADD TO CART</button>
+              <button className="ts-detail-add" onClick={() => onAdd(product)}>
+                ADD TO CART
+              </button>
             </div>
           </div>
         </div>
